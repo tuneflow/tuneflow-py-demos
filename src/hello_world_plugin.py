@@ -1,4 +1,4 @@
-from tuneflow_py import TuneflowPlugin, Song
+from tuneflow_py import TuneflowPlugin, Song, ReadAPIs, ParamDescriptor
 from typing import Any
 
 
@@ -35,8 +35,11 @@ class HelloWorld(TuneflowPlugin):
     @staticmethod
     def allow_reset():
         return False
+    
+    def params(self) -> dict[str, ParamDescriptor]:
+        return {}
 
-    def run(self, song: Song, params: dict[str, Any]):
+    def run(self, song: Song, params: dict[str, Any], read_apis: ReadAPIs):
         """
         Do nothing except printing "hello world".
 
