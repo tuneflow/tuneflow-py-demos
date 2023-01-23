@@ -1,5 +1,5 @@
-from transpose_track_plugin import TransposeTrack
+from basic.read_api import ReadAPIExample
 from tuneflow_devkit import Debugger
 
 if __name__ == "__main__":
-    Debugger(TransposeTrack).start()
+    Debugger(plugin_class=ReadAPIExample).start()
