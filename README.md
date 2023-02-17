@@ -1,5 +1,9 @@
 # TuneFlow Python Plugin Examples
 
+## Requirements
+
+Python >= 3.7
+
 ## Run the demo plugins
 
 You will need to install all dependencies by running:
