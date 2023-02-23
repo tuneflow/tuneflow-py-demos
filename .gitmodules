@@ -1,0 +1,3 @@
+[submodule "src/generate/audioldm"]
+	path = src/generate/audioldm
+	url = https://github.com/tuneflow/AudioLDM.git

@@ -6,17 +6,19 @@ Python >= 3.7
 
 ## Run the demo plugins
 
-You will need to install all dependencies by running:
+To run a demo plugin in TuneFlow:
 
+1. `cd` to the root folder of the plugin
+
+2. Install dependencies if there is any:
 ``` bash
 pip install -r requirements.txt
 ```
 
-Next, change the plugin we are debugging in `src/debug.py` to the plugin you want to run.
+3. Run the debug host:
 
-Then, within the `src` directory, run:
 ``` bash
 python debug.py
 ```
 
-You will see the demo plugin loaded in a local debug server.
+4. Start TuneFlow Desktop and run the "Plugin Development" plugin.
