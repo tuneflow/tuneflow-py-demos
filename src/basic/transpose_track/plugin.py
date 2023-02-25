@@ -12,31 +12,7 @@ class TransposeTrack(TuneflowPlugin):
         return "transpose-track"
 
     @staticmethod
-    def provider_display_name():
-        return {
-            "zh": "Andantei 行板",
-            "en": "Andantei"
-        }
-
-    @staticmethod
-    def plugin_display_name():
-        return {
-            "zh": "轨道转调",
-            "en": "Transpose Track"
-        }
-
-    @staticmethod
-    def plugin_description():
-        return {
-            "zh": "将选中的轨道中的所有音符转调",
-            "en": "Transpose all notes within a track"
-        }
-
-    @staticmethod
-    def allow_reset():
-        return False
-
-    def params(self) -> dict[str, ParamDescriptor]:
+    def params(song: Song, read_apis: ReadAPIs) -> dict[str, ParamDescriptor]:
         return {
             "trackId": {
                 "displayName": {
@@ -48,7 +24,7 @@ class TransposeTrack(TuneflowPlugin):
                     "type": WidgetType.TrackSelector.value,
                     "config": {
                         "alwaysShowTrackInfo": True,
-                        "allowedTrackTypes": [TrackType.MIDI_TRACK], # type: ignore
+                        "allowedTrackTypes": [TrackType.MIDI_TRACK],  # type: ignore
                     },
                 },
             },
@@ -97,15 +73,16 @@ class TransposeTrack(TuneflowPlugin):
             },
         }
 
-    def run(self, song: Song, params: dict[str, Any], read_apis: ReadAPIs):
+    @staticmethod
+    def run(song: Song, params: dict[str, Any], read_apis: ReadAPIs):
         track_id = params["trackId"]
         pitch_offset = params["pitchOffset"]
         track = song.get_track_by_id(track_id=track_id)
         if track is None:
             raise Exception('Track not ready')
-        
+
         for clip in track.get_clips():
-            if clip.get_type() == ClipType.MIDI_CLIP: # type: ignore
+            if clip.get_type() == ClipType.MIDI_CLIP:  # type: ignore
                 raw_notes = list(clip.get_raw_notes())
                 for i in reversed(range(len(raw_notes))):
                     note = raw_notes[i]
@@ -114,6 +91,6 @@ class TransposeTrack(TuneflowPlugin):
                         clip.delete_note_at(i)
                         continue
                     note.set_pitch(new_pitch)
-            elif clip.get_type() == ClipType.AUDIO_CLIP: # type: ignore
+            elif clip.get_type() == ClipType.AUDIO_CLIP:  # type: ignore
                 # TODO: Support audio pitch shift.
                 pass

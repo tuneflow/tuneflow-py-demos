@@ -1,0 +1,24 @@
+{
+    "plugins": [
+      {
+        "providerId": "andantei",
+        "providerDisplayName": {
+          "zh": "Andantei行板",
+          "en": "Andantei"
+        },
+        "pluginId": "throw-exception-example",
+        "pluginDisplayName": {
+            "zh": "抛出异常示例",
+            "en": "Throw Exception Example"
+        },
+        "pluginDescription": {
+            "zh": "一个在插件执行过程中抛出异常的示例，在TuneFlow桌面版中执行本插件后插件状态条将变成红色以表示执行出错。",
+            "en": "Throw an exception during execution. You should be able to see that the plugin in TuneFlow Desktop turns red after execution."
+        },
+        "version": "1.0.0",
+        "options": {
+          "allowReset": false
+        }
+      }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "plugins": [
+      {
+        "providerId": "andantei",
+        "providerDisplayName": {
+          "zh": "Andantei行板",
+          "en": "Andantei"
+        },
+        "pluginId": "hello-world",
+        "pluginDisplayName": {
+            "zh": "Hello World 插件",
+            "en": "Hello World Plugin"
+        },
+        "pluginDescription": {
+            "zh": "这是一个Hello World插件",
+            "en": "This is a hello world plugin."
+        },
+        "version": "1.0.0",
+        "options": {
+          "allowReset": false
+        }
+      }
+    ]
+}

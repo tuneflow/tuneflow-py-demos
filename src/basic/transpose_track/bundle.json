@@ -1,0 +1,24 @@
+{
+    "plugins": [
+      {
+        "providerId": "andantei",
+        "providerDisplayName": {
+          "zh": "Andantei行板",
+          "en": "Andantei"
+        },
+        "pluginId": "transpose-track",
+        "pluginDisplayName": {
+            "zh": "轨道转调",
+            "en": "Transpose Track"
+        },
+        "pluginDescription": {
+            "zh": "将选中的轨道中的所有音符转调",
+            "en": "Transpose all notes within a track"
+        },
+        "version": "1.0.0",
+        "options": {
+          "allowReset": false
+        }
+      }
+    ]
+}

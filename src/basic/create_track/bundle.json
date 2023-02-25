@@ -1,0 +1,24 @@
+{
+    "plugins": [
+      {
+        "providerId": "andantei",
+        "providerDisplayName": {
+          "zh": "Andantei行板",
+          "en": "Andantei"
+        },
+        "pluginId": "create-track-example",
+        "pluginDisplayName": {
+            "zh": "创建轨道示例",
+            "en": "Create Track Example"
+        },
+        "pluginDescription": {
+            "zh": "演示如何创建新轨道",
+            "en": "An example of how to create new tracks"
+        },
+        "version": "1.0.0",
+        "options": {
+          "allowReset": false
+        }
+      }
+    ]
+}
