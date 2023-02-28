@@ -1,4 +1,4 @@
-from tuneflow_py import TuneflowPlugin, Song, ReadAPIs, ParamDescriptor
+from tuneflow_py import TuneflowPlugin, Song, ParamDescriptor
 from typing import Any
 
 
@@ -12,11 +12,11 @@ class ThrowExceptionExample(TuneflowPlugin):
         return "throw-exception-example"
 
     @staticmethod
-    def params(song: Song, read_apis: ReadAPIs) -> dict[str, ParamDescriptor]:
+    def params(song: Song) -> dict[str, ParamDescriptor]:
         return {}
 
     @staticmethod
-    def run(song: Song, params: dict[str, Any], read_apis: ReadAPIs):
+    def run(song: Song, params: dict[str, Any]):
         """
         Throw an exception during execution. You should be able to see that
         the plugin in TuneFlow Desktop turns red after execution.

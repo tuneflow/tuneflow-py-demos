@@ -1,4 +1,4 @@
-from tuneflow_py import TuneflowPlugin, Song, ReadAPIs, ParamDescriptor
+from tuneflow_py import TuneflowPlugin, Song, ParamDescriptor
 from typing import Any
 
 
@@ -12,11 +12,11 @@ class HelloWorld(TuneflowPlugin):
         return "hello-world"
 
     @staticmethod
-    def params(song: Song, read_apis: ReadAPIs) -> dict[str, ParamDescriptor]:
+    def params(song: Song) -> dict[str, ParamDescriptor]:
         return {}
 
     @staticmethod
-    def run(song: Song, params: dict[str, Any], read_apis: ReadAPIs):
+    def run(song: Song, params: dict[str, Any]):
         """
         Do nothing except printing "hello world".
 

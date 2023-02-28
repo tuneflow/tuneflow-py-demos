@@ -1,4 +1,4 @@
-from tuneflow_py import TuneflowPlugin, Song, ReadAPIs, ParamDescriptor, WidgetType, TrackType, ClipType, Note
+from tuneflow_py import TuneflowPlugin, Song, ParamDescriptor, WidgetType, TrackType, ClipType, Note
 from typing import Any
 
 
@@ -12,7 +12,7 @@ class TransposeTrack(TuneflowPlugin):
         return "transpose-track"
 
     @staticmethod
-    def params(song: Song, read_apis: ReadAPIs) -> dict[str, ParamDescriptor]:
+    def params(song: Song) -> dict[str, ParamDescriptor]:
         return {
             "trackId": {
                 "displayName": {
@@ -74,7 +74,7 @@ class TransposeTrack(TuneflowPlugin):
         }
 
     @staticmethod
-    def run(song: Song, params: dict[str, Any], read_apis: ReadAPIs):
+    def run(song: Song, params: dict[str, Any]):
         track_id = params["trackId"]
         pitch_offset = params["pitchOffset"]
         track = song.get_track_by_id(track_id=track_id)
