@@ -1,3 +1,6 @@
 [submodule "src/generate/audioldm"]
 	path = src/generate/audioldm
 	url = https://github.com/tuneflow/AudioLDM.git
+[submodule "src/transcription/singing-transcription"]
+	path = src/transcription/singing-transcription
+	url = https://github.com/tuneflow/singing-transcription-plugin.git
