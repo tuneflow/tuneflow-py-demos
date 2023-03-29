@@ -4,3 +4,6 @@
 [submodule "src/transcription/singing-transcription"]
 	path = src/transcription/singing-transcription
 	url = https://github.com/tuneflow/singing-transcription-plugin.git
+[submodule "src/transcription/basic-pitch"]
+	path = src/transcription/basic-pitch
+	url = https://github.com/tuneflow/basic-pitch.git
