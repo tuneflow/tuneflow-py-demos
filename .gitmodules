@@ -7,3 +7,6 @@
 [submodule "src/transcription/basic-pitch"]
 	path = src/transcription/basic-pitch
 	url = https://github.com/tuneflow/basic-pitch.git
+[submodule "src/separate_source/demucs"]
+	path = src/separate_source/demucs
+	url = https://github.com/tuneflow/tuneflow-plugin-demucs.git
