@@ -15,6 +15,12 @@
             "zh": "这是一个Hello World插件",
             "en": "This is a hello world plugin."
         },
+        "triggers": [
+          {
+            "type": "song"
+          }
+        ],
+        "categories": ["generate"],
         "version": "1.0.0",
         "options": {
           "allowReset": false

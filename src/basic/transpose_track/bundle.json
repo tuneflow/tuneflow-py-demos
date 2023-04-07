@@ -15,6 +15,12 @@
             "zh": "将选中的轨道中的所有音符转调",
             "en": "Transpose all notes within a track"
         },
+        "triggers": [
+          {
+            "type": "selected-clips"
+          }
+        ],
+        "categories": ["misc"],
         "version": "1.0.0",
         "options": {
           "allowReset": false
