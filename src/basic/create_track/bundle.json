@@ -15,6 +15,12 @@
             "zh": "演示如何创建新轨道",
             "en": "An example of how to create new tracks"
         },
+        "triggers": [
+          {
+            "type": "song"
+          }
+        ],
+        "categories": ["generate"],
         "version": "1.0.0",
         "options": {
           "allowReset": false
