@@ -15,6 +15,15 @@
             "zh": "将选中的轨道中的所有音符转调",
             "en": "Transpose all notes within a track"
         },
+        "triggers": [
+          {
+            "type": "context-track-content",
+            "config": {
+              "allowedTrackTypes": ["audio", "midi"]
+            }
+          }
+        ],
+        "categories": ["misc"],
         "version": "1.0.0",
         "options": {
           "allowReset": false

@@ -1,5 +1,7 @@
 from tuneflow_py import TuneflowPlugin, Song, ParamDescriptor, WidgetType, TrackType, ClipType, Note
-from typing import Any
+from typing import Any, Dict
+
+from tuneflow_py.descriptors.plugin import TuneflowPluginTriggerData
 
 
 class TransposeTrack(TuneflowPlugin):
@@ -12,22 +14,8 @@ class TransposeTrack(TuneflowPlugin):
         return "transpose-track"
 
     @staticmethod
-    def params(song: Song) -> dict[str, ParamDescriptor]:
+    def params(song: Song) -> Dict[str, ParamDescriptor]:
         return {
-            "trackId": {
-                "displayName": {
-                    "zh": '轨道',
-                    "en": 'Track',
-                },
-                "defaultValue": None,
-                "widget": {
-                    "type": WidgetType.TrackSelector.value,
-                    "config": {
-                        "alwaysShowTrackInfo": True,
-                        "allowedTrackTypes": [TrackType.MIDI_TRACK],  # type: ignore
-                    },
-                },
-            },
             "pitchOffset": {
                 "displayName": {
                     "zh": '调整半音数',
@@ -75,8 +63,9 @@ class TransposeTrack(TuneflowPlugin):
 
     @staticmethod
     def run(song: Song, params: dict[str, Any]):
-        track_id = params["trackId"]
         pitch_offset = params["pitchOffset"]
+        trigger: TuneflowPluginTriggerData = params["trigger"]
+        track_id = trigger["entities"][0]["trackId"]
         track = song.get_track_by_id(track_id=track_id)
         if track is None:
             raise Exception('Track not ready')
